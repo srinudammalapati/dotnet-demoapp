@@ -1,5 +1,5 @@
 ---
-  pool: testatorg level
+  pool: testatorglevel
 
   trigger:
     - master
@@ -13,8 +13,8 @@
             command: 'build'
             projects: src/dotnet-demoapp.csproj
     - job: testjob
-      displayName: dotnettest
-      dependsOn: Build_Job
+      displayName: dotnet
+      dependsOn: dotnetbuild
       condition: succeeded()
       steps:
         - task: DotNetCoreCLI@2
